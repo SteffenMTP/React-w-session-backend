@@ -16,9 +16,9 @@ const Navbar = () => {
         </button>
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <NavLink end className="nav-link" aria-current="page" to="/">Home</NavLink>
-            </li>
+            </li> */}
             
 
             {/* Products fra BACKENDAPI */}
@@ -30,6 +30,8 @@ const Navbar = () => {
                 <li><NavLink className="dropdown-item" to="/ProductsAdmin">Products Admin</NavLink></li>
               </ul>
             </li>
+
+            <button className='btn btn-primary'>Log in</button>
 
             {/* ANDET
             <li className="nav-item">
