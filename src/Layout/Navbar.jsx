@@ -1,46 +1,34 @@
-import React from 'react';
-import { NavLink, Link } from "react-router-dom";
-import '../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js';
-import car from '../assets/Logo.png';
+import {NavLink} from "react-router-dom";
+import { useContext } from 'react';
+import Logout from '../components/Logout.jsx';
+
+import { LoginContext } from '../context/LoginContext.js';
 
 const Navbar = () => {
+
+  const { adminUser } = useContext(LoginContext)
+
   return (
 
-    <nav className="navbar navbar-expand-lg bg-light">
-      <div className="container">
-        <Link className="navbar-brand" href="#" to="/">
-          <img src={car} alt="logo" width="80" />
-        </Link>
-        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span className="navbar-toggler-icon"></span>
-        </button>
-        <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="navbar-nav">
-            {/* <li className="nav-item">
-              <NavLink end className="nav-link" aria-current="page" to="/">Home</NavLink>
-            </li> */}
-            
-
-            {/* Products fra BACKENDAPI */}
-            <li className="nav-item dropdown">
-              <span className="nav-link dropdown-toggle" data-bs-toggle="dropdown">BackendAPI</span>
-              <ul className="dropdown-menu">
-                <li><NavLink className="dropdown-item" to="/Products">Products</NavLink></li>
-                <li><NavLink className="dropdown-item" to="/ProductsAdminCreate">Products Create</NavLink></li>
-                <li><NavLink className="dropdown-item" to="/ProductsAdmin">Products Admin</NavLink></li>
-              </ul>
-            </li>
-
-            <button className='btn btn-primary'>Log in</button>
-
-            {/* ANDET
-            <li className="nav-item">
-              <NavLink className="nav-link" aria-current="page" to="/noget">Noget</NavLink>
-            </li> */}
-
-          </ul>
-        </div>
-      </div>
+    <nav>
+      <ul>
+        <li><NavLink to="/">Home</NavLink></li>
+        <li><NavLink to="contact">Contact</NavLink></li>
+        <li><NavLink to="products">Products</NavLink></li>
+        {/* bør kun vises hvis man IKKE er logget ind */}
+        {
+          !adminUser &&
+          <li><NavLink to="/login">Login</NavLink></li>
+        }
+        {/* bør kun vies hvis man er logget ind */}
+        {
+          adminUser &&
+          <>
+            <li><NavLink to="/admin">ADMIN</NavLink></li>
+            <li><Logout /></li>
+          </>
+        }
+      </ul>
     </nav>
   )
 }

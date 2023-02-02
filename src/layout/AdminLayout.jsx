@@ -1,0 +1,28 @@
+import {Outlet, Navigate} from 'react-router-dom'
+import { useContext } from 'react';
+import AdminNavbar from "./AdminNavbar"
+
+import { LoginContext } from '../context/LoginContext';
+
+const AdminLayout = () => {
+
+  const {adminUser} = useContext(LoginContext)
+
+  if(!adminUser) {
+    return <Navigate to="/login" replace />
+  }
+
+  return (
+    <div className='container-fluid admin-layout p-4'>
+      <header>
+        <AdminNavbar/>
+      </header>
+      <main>
+        <Outlet/>
+      </main>
+    </div>
+    
+  )
+}
+
+export default AdminLayout
