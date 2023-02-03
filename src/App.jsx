@@ -2,8 +2,11 @@ import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } 
 
 import './App.scss';
 import DefaultLayout from './layout/DefaultLayout';
+
 import ProductsAdmin from './pages/admin/ProductsAdmin';
 import ProductsCreate from './pages/admin/ProductsCreate';
+import ProductsUpdate from './pages/admin/ProductsUpdate';
+
 import HomeAdmin from './pages/admin/HomeAdmin';
 import Contact from './pages/Contact';
 import Home from './pages/Home';
@@ -32,6 +35,7 @@ const router = createBrowserRouter(
         <Route index element={ <HomeAdmin /> } />
         <Route path="productsadmin" element={ <ProductsAdmin /> } />
         <Route path="productscreate" element={ <ProductsCreate /> } />
+        <Route path="productsupdate/:id" element={ <ProductsUpdate /> } />
       </Route>
 
     </>
