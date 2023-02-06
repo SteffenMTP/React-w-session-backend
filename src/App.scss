@@ -1,7 +1,49 @@
 @import '../node_modules/bootstrap/scss/bootstrap.scss';
 
+nav {
+  width: 100vw;
+  margin: 0 auto;
+  // background-color: rgb(101, 101, 101);
+}
+
+nav ul{
+  margin: 0 auto;
+  text-align: center;
+}
+
+ul{
+  list-style: none;
+}
+
+ul li{
+  display: inline-block;
+  margin: 20px 10px;
+  text-align: center;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+ul li a{
+  text-decoration: none;
+  color: black;
+}
+
+
 
 .admin-layout{
   background-color: hsl(0, 1%, 13%);
   color: white;
 }
+
+.AdminNavbar ul li a{
+  color: white;
+
+  &:hover{
+    color: green;
+  }
+
+
+}
+
+
+

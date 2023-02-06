@@ -89,7 +89,7 @@ const ProductsUpdate = () => {
               <div>
                 <label> Long Description: <br />
                   {/* <textarea type="text" name="LongDesc" required placeholder="Lang beskrivelse af produktet"/> */}
-                  <ReactQuill theme="snow" onChange={value => setQuillTxt(value)} value={quillTxt} name="LongDesc" placeholder="Lang produktbeskrivelse (formateret)" style={{ backgroundColor: 'white', color: 'black' }} />
+                  <ReactQuill theme="snow" onChange={value => setQuillTxt(value)} defaultValue={products.LongDesc} name="LongDesc" placeholder="Lang produktbeskrivelse (formateret)" style={{ backgroundColor: 'white', color: 'black' }} />
                 </label>
               </div>
 

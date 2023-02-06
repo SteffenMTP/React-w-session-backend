@@ -52,6 +52,7 @@ const ProductsAdmin = () => {
               <h2>{p.name}</h2>
               <p>{p.ShortDesc}</p>
               <div>{parse(p.LongDesc)}</div>
+              <img src={'http://localhost:5111/images/' + p.productImage} alt='Product'/>
               <button onClick={() => handleDelete(p._id, p.name)}>Slet</button>
 
               <Link to={"/admin/productsupdate/" + p._id}>Ret</Link>

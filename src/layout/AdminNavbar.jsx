@@ -4,7 +4,7 @@ import Logout from "../components/Logout"
 const AdminNavbar = () => {
     return (
 
-        <nav>
+        <nav className="AdminNavbar">
             <ul>
                 <li><NavLink to="/admin">ADMINHome</NavLink></li>
                 <li><NavLink to="productsadmin">Products ADMIN</NavLink></li>
